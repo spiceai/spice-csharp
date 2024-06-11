@@ -12,7 +12,7 @@ public class SpiceClient
     public string FirecacheAddress { get; internal set; } = SpiceDefaultConfigLocal.FirecacheAddress;
     public string HttpAddress { get; internal set; } = SpiceDefaultConfigLocal.HttpAddress;
     public int MaxRetries { get; internal set; } = 3;
-    
+
     private SpiceFlightClient? FlightClient { get; set; }
 
     internal void Init()
@@ -25,7 +25,8 @@ public class SpiceClient
         if (FlightClient == null)
         {
             throw new Exception("FlightClient not initialized");
-        } 
+        }
+
         return FlightClient.Query(sql);
     }
 }

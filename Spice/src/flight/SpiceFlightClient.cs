@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using System.Net.Http.Headers;
 using System.Text;
 using Apache.Arrow;
@@ -27,7 +28,7 @@ internal class SpiceFlightClient
                         Authorization = AuthenticationHeaderValue.Parse("Basic " +
                                                                         System.Convert.ToBase64String(Encoding
                                                                             .UTF8
-                                                                            .GetBytes(appId + ":" + apiKey)))
+                                                                            .GetBytes($"{appId}:{apiKey}")))
                     }
                 }
             };
@@ -38,7 +39,17 @@ internal class SpiceFlightClient
         }
 
         _flightClient = new FlightClient(GrpcChannel.ForAddress(address, options));
-        _flightClient.Handshake();
+        var stream = _flightClient.Handshake();
+
+        stream.ResponseHeadersAsync.Wait();
+        var md = stream.ResponseHeadersAsync.Result;
+        var token = md.Get("authorization");
+        if (token == null || options.HttpClient == null)
+        {
+            throw new Exception("Failed to authenticate token");
+        }
+
+        options.HttpClient.DefaultRequestHeaders.Authorization = AuthenticationHeaderValue.Parse(token.Value);
     }
 
 
