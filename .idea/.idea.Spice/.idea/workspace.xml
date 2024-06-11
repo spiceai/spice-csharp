@@ -1,31 +1,79 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="d9535132-3180-4766-9f46-224c6b0ba50f" name="Changes" comment="" />
+    <list default="true" id="d9535132-3180-4766-9f46-224c6b0ba50f" name="Changes" comment="Add github workflow">
+      <change afterPath="$PROJECT_DIR$/Spice/src/SpiceClient.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spice/src/SpiceClientBuilder.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spice/src/config/SpiceDefaultConfigCloud.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spice/src/config/SpiceDefaultConfigLocal.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spice/src/flight/SpiceFlightClient.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpiceTest/FlightQueryTest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spice/Class1.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spice/Spice.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Spice/Spice.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpiceTest/UnitTest1.cs" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="trunk" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 2
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/35569dbe681941aa9edd0ff6d1343bad1e800/03/6515041b/FlightRecordBatchStreamReader.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/35569dbe681941aa9edd0ff6d1343bad1e800/32/3d4e81ac/FlightClient.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/35569dbe681941aa9edd0ff6d1343bad1e800/b6/58b725b7/FlightDescriptor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/35569dbe681941aa9edd0ff6d1343bad1e800/db/3e458b0f/FlightDescriptorType.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/35569dbe681941aa9edd0ff6d1343bad1e800/e7/4e46b39b/FlightDescriptor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c15184cdf8254e74a8a6ee96bd1b8738d82000/9e/96604549/Environment.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c15184cdf8254e74a8a6ee96bd1b8738d82000/cc/420f1358/IAsyncEnumerator`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/e8b80b817ac34f5d8f59922b85a267511d8a00/63/323afdb2/HttpRequestHeaders.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/91876be53b0297bbe3e3ed99bdb57588eca137bfe1fe775e37419dffdccd/GrpcChannel.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/96dcc9e57f1c97da5d6e55d45139b42bebd289a36680625852c9cc0286ff37/RpcException.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d37afa0a984eb534c5fcfa8bef7a1261e4d9df3c0b94eb668f471de2444ee/TestAttribute.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
+  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
+  <component name="KubernetesApiProvider"><![CDATA[{
+  "isMigrated": true
 }]]></component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
   <component name="ProjectId" id="2hiYxcZnnSEeihKh9JEahyFHZ0h" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "162fdbd4-a77d-45b2-af3a-d616045ac6ff.executor": "Debug",
+    "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "trunk",
+    "git-widget-placeholder": "kkhramkov/base-implementation",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "GitIgnore"
+    ],
     "rider.external.source.directories": [
       "/Users/kirillkhramkov/Library/Application Support/JetBrains/Rider2024.1/resharper-host/DecompilerCache",
       "/Users/kirillkhramkov/Library/Application Support/JetBrains/Rider2024.1/resharper-host/SourcesCache",
@@ -42,14 +90,76 @@
       <option name="presentableId" value="Default" />
       <updated>1718078614624</updated>
       <workItem from="1718078616160" duration="202000" />
+      <workItem from="1718078825988" duration="9608000" />
     </task>
+    <task id="LOCAL-00001" summary="Init project files">
+      <option name="closed" value="true" />
+      <created>1718079152420</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1718079152420</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Init project files">
+      <option name="closed" value="true" />
+      <created>1718079160098</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1718079160098</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Add github workflow">
+      <option name="closed" value="true" />
+      <created>1718079613428</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1718079613428</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Add github workflow">
+      <option name="closed" value="true" />
+      <created>1718082618685</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1718082618685</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="Init project files" />
+    <MESSAGE value="Add github workflow" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add github workflow" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="DotNet Exception Breakpoints">
+          <properties exception="Grpc.Core.RpcException" isInternal="false" displayValue="RpcException" namespaceName="Grpc.Core">
+            <option name="internal" value="false" />
+          </properties>
+          <option name="timeStamp" value="2" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

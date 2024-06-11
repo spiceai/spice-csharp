@@ -6,4 +6,9 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <PackageReference Include="Apache.Arrow" Version="16.1.0" />
+      <PackageReference Include="Apache.Arrow.Flight" Version="16.1.0" />
+    </ItemGroup>
+
 </Project>
