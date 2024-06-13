@@ -25,12 +25,13 @@ public class FlightQueryTest
     public async Task TestQuery()
     {
         var result =
-            _spiceClient.Query(
+            await _spiceClient.Query(
                 """SELECT number, "timestamp", base_fee_per_gas, base_fee_per_gas / 1e9 AS base_fee_per_gas_gwei FROM eth.recent_blocks limit 10""");
 
-        while (await result.MoveNextAsync())
+        var enumerator = result.GetAsyncEnumerator();
+        while (await enumerator.MoveNextAsync())
         {
-            var batch = result.Current;
+            var batch = enumerator.Current;
             Assert.Multiple(() =>
             {
                 Assert.That(batch.ColumnCount, Is.EqualTo(4));
@@ -43,14 +44,16 @@ public class FlightQueryTest
     public async Task TestQueryLarge()
     {
         var result =
-            _spiceClient.Query(
+            await _spiceClient.Query(
                 """SELECT number, "timestamp", base_fee_per_gas, base_fee_per_gas / 1e9 AS base_fee_per_gas_gwei FROM eth.blocks limit 2000""");
+
+        var enumerator = result.GetAsyncEnumerator();
 
         var totalTows = 0;
         var numBatches = 0;
-        while (await result.MoveNextAsync())
+        while (await enumerator.MoveNextAsync())
         {
-            var batch = result.Current;
+            var batch = enumerator.Current;
             numBatches += 1;
             totalTows += batch.Length;
         }

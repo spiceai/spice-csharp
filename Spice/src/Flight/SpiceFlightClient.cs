@@ -1,5 +1,4 @@
 using System.Net.Http.Headers;
-using Apache.Arrow;
 using Apache.Arrow.Flight;
 using Apache.Arrow.Flight.Client;
 using Grpc.Core;
@@ -45,18 +44,18 @@ internal class SpiceFlightClient
         {
             return;
         }
-        
+
         var stream = _flightClient.Handshake();
 
         stream.ResponseHeadersAsync.Wait();
 
-        var token = GetAuthToken(stream.ResponseHeadersAsync.Result, stream.GetTrailers()); 
+        var token = GetAuthToken(stream.ResponseHeadersAsync.Result, stream.GetTrailers());
         if (token == null || options.HttpClient == null) throw new Exception("Failed to authenticate token");
 
         options.HttpClient.DefaultRequestHeaders.Authorization = AuthenticationHeaderValue.Parse(token.Value);
     }
 
-    internal async IAsyncEnumerator<RecordBatch> Query(string sql)
+    internal async Task<FlightClientRecordBatchStreamReader> Query(string sql)
     {
         var descriptor = FlightDescriptor.CreateCommandDescriptor(sql);
 
@@ -65,6 +64,6 @@ internal class SpiceFlightClient
         if (endpoint == null) throw new Exception("Failed to get endpoint");
 
         var stream = _flightClient.GetStream(endpoint.Ticket);
-        await foreach (var batch in stream.ResponseStream) yield return batch;
+        return stream.ResponseStream;
     }
 }

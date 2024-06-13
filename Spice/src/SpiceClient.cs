@@ -1,4 +1,4 @@
-using Apache.Arrow;
+using Apache.Arrow.Flight.Client;
 using Spice.Config;
 using Spice.Flight;
 
@@ -18,7 +18,7 @@ public class SpiceClient
         FlightClient = new SpiceFlightClient(FlightAddress, AppId, ApiKey);
     }
 
-    public IAsyncEnumerator<RecordBatch> Query(string sql)
+    public Task<FlightClientRecordBatchStreamReader> Query(string sql)
     {
         if (FlightClient == null) throw new Exception("FlightClient not initialized");
 

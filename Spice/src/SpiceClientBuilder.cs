@@ -19,9 +19,10 @@ public class SpiceClientBuilder
         {
             throw new ArgumentException("apiKey is invalid");
         }
+
         _spiceClient.AppId = parts[0];
         _spiceClient.ApiKey = apiKey;
-        
+
         _spiceClient.FlightAddress = SpiceDefaultConfigCloud.FlightAddress;
         return this;
     }
@@ -37,5 +38,4 @@ public class SpiceClientBuilder
         _spiceClient.Init();
         return _spiceClient;
     }
-    
 }
