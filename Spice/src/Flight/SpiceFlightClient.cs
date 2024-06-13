@@ -45,7 +45,20 @@ internal class SpiceFlightClient
         options.HttpClient.DefaultRequestHeaders.Authorization = AuthenticationHeaderValue.Parse(token.Value);
     }
 
+    internal IEnumerable<RecordBatch> Query(string sql)
+    {
+        var descriptor = FlightDescriptor.CreateCommandDescriptor(sql);
+        var request = _flightClient.GetInfo(descriptor);
+        request.ResponseAsync.Wait();
 
+        var flightInfo = request.ResponseAsync.Result;
+        var endpoint = flightInfo.Endpoints.FirstOrDefault();
+        if (endpoint == null) throw new Exception("Failed to get endpoint");
+
+        var stream = _flightClient.GetStream(endpoint.Ticket);
+        return stream.ResponseStream.ToBlockingEnumerable();
+    }
+    
     internal async IAsyncEnumerator<RecordBatch> QueryAsync(string sql)
     {
         var descriptor = FlightDescriptor.CreateCommandDescriptor(sql);
@@ -58,17 +71,5 @@ internal class SpiceFlightClient
         await foreach (var batch in stream.ResponseStream) yield return batch;
     }
 
-    internal IEnumerable<RecordBatch> Query(string sql)
-    {
-        var descriptor = FlightDescriptor.CreateCommandDescriptor(sql);
-        var request = _flightClient.GetInfo(descriptor);
-        request.ResponseAsync.Wait();
-
-        var flightInfo = request.ResponseAsync.Result;
-        var endpoint = flightInfo.Endpoints.FirstOrDefault();
-        if (endpoint == null) throw new Exception("Failed to get endpoint");
-
-        var stream = _flightClient.GetStream(endpoint.Ticket);
-        return stream.ResponseStream.ReadAllAsync().ToBlockingEnumerable();
-    }
+   
 }
