@@ -1,4 +1,4 @@
-using Spice.config;
+using Spice.Config;
 
 namespace Spice;
 
@@ -6,7 +6,13 @@ public class SpiceClientBuilder
 {
     private readonly SpiceClient _spiceClient = new();
 
-    public SpiceClientBuilder WithApiKey(string apiKey)
+    public SpiceClientBuilder WithFlightAddress(string flightAddress)
+    {
+        _spiceClient.FlightAddress = flightAddress;
+        return this;
+    }
+
+    public SpiceClientBuilder WithSpiceCloud(string apiKey)
     {
         var parts = apiKey.Split('|');
         if (parts.Length != 2)
@@ -15,32 +21,8 @@ public class SpiceClientBuilder
         }
         _spiceClient.AppId = parts[0];
         _spiceClient.ApiKey = apiKey;
-        return this;
-    }
-
-    public SpiceClientBuilder WithHttpAddress(string httpAddress)
-    {
-        _spiceClient.HttpAddress = httpAddress;
-        return this;
-    }
-
-    public SpiceClientBuilder WithFlightAddress(string flightAddress)
-    {
-        _spiceClient.FlightAddress = flightAddress;
-        return this;
-    }
-
-    public SpiceClientBuilder WithFirecacheAddress(string firecacheAddress)
-    {
-        _spiceClient.FirecacheAddress = firecacheAddress;
-        return this;
-    }
-
-    public SpiceClientBuilder WithSpiceCloud()
-    {
-        _spiceClient.HttpAddress = SpiceDefaultConfigCloud.HttpAddress;
+        
         _spiceClient.FlightAddress = SpiceDefaultConfigCloud.FlightAddress;
-        _spiceClient.FirecacheAddress = SpiceDefaultConfigCloud.FirecacheAddress;
         return this;
     }
 

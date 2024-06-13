@@ -8,8 +8,7 @@ public class FlightQueryTest
     public async Task TestDoGetAsync()
     {
         var client = new SpiceClientBuilder()
-            .WithApiKey("323337|b42eceab2e7c4a60a04ad57bebea830d")
-            .WithSpiceCloud()
+            .WithSpiceCloud("323337|b42eceab2e7c4a60a04ad57bebea830d")
             .Build();
         var result =
             client.DoGetAsync("""SELECT number, "timestamp", hash FROM eth.recent_blocks ORDER BY number LIMIT 10""");
@@ -25,8 +24,7 @@ public class FlightQueryTest
     public void TestDoGetSync()
     {
         var client = new SpiceClientBuilder()
-            .WithApiKey("323337|b42eceab2e7c4a60a04ad57bebea830d")
-            .WithSpiceCloud()
+            .WithSpiceCloud("323337|b42eceab2e7c4a60a04ad57bebea830d")
             .Build();
         var result =
             client.DoGet("""SELECT number, "timestamp", hash FROM eth.recent_blocks ORDER BY number LIMIT 10""");

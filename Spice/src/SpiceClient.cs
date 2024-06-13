@@ -1,6 +1,6 @@
 using Apache.Arrow;
-using Spice.config;
-using Spice.flight;
+using Spice.Config;
+using Spice.Flight;
 
 namespace Spice;
 
@@ -9,8 +9,6 @@ public class SpiceClient
     public string? AppId { get; internal set; }
     public string? ApiKey { get; internal set; }
     public string FlightAddress { get; internal set; } = SpiceDefaultConfigLocal.FlightAddress;
-    public string FirecacheAddress { get; internal set; } = SpiceDefaultConfigLocal.FirecacheAddress;
-    public string HttpAddress { get; internal set; } = SpiceDefaultConfigLocal.HttpAddress;
     public int MaxRetries { get; internal set; } = 3;
 
     private SpiceFlightClient? FlightClient { get; set; }

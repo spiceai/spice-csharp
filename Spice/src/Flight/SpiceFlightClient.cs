@@ -5,8 +5,9 @@ using Apache.Arrow.Flight;
 using Apache.Arrow.Flight.Client;
 using Grpc.Core;
 using Grpc.Net.Client;
+using Spice.Extension;
 
-namespace Spice.flight;
+namespace Spice.Flight;
 
 internal class SpiceFlightClient
 {
