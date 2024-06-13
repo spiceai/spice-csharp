@@ -1,16 +1,13 @@
 /*
 Copyright 2024 The Spice.ai OSS Authors
-
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
 to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software, and to permit persons to whom the Software is
 furnished to do so, subject to the following conditions:
-
 The above copyright notice and this permission notice shall be included in all
 copies or substantial portions of the Software.
-
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -25,6 +22,8 @@ using Apache.Arrow.Flight;
 using Apache.Arrow.Flight.Client;
 using Grpc.Core;
 using Grpc.Net.Client;
+using Polly;
+using Polly.Retry;
 using Spice.Auth;
 using Spice.Errors;
 
@@ -33,6 +32,7 @@ namespace Spice.Flight;
 internal class SpiceFlightClient
 {
     private readonly FlightClient _flightClient;
+    private readonly AsyncRetryPolicy _retryPolicy;
 
     private static GrpcChannelOptions GetGrpcChannelOptions(string? appId, string? apiKey)
     {
@@ -57,8 +57,19 @@ internal class SpiceFlightClient
         return responseHeaders.Get("authorization") ?? trailers.Get("authorization");
     }
 
-    internal SpiceFlightClient(string address, string? appId, string? apiKey)
+    internal SpiceFlightClient(string address, int maxRetries, string? appId, string? apiKey)
     {
+        _retryPolicy = Policy.Handle<RpcException>(ex =>
+                ex.Status.StatusCode is StatusCode.Unavailable or StatusCode.DeadlineExceeded or StatusCode.Aborted
+                    or StatusCode.Internal or StatusCode.Unknown)
+            .WaitAndRetryAsync(retryCount: maxRetries,
+                sleepDurationProvider: retryAttempt => TimeSpan.FromSeconds(retryAttempt * 1.5),
+                onRetry: (_, timespan, retryAttempt, _) =>
+                {
+                    Console.WriteLine(
+                        $"Request failed. Waiting {timespan} before next retry. Retry attempt {retryAttempt}");
+                });
+
         var options = GetGrpcChannelOptions(appId, apiKey);
 
         _flightClient = new FlightClient(GrpcChannel.ForAddress(address, options));
@@ -84,13 +95,17 @@ internal class SpiceFlightClient
         {
             throw new ArgumentException("No SQL provided");
         }
-        var descriptor = FlightDescriptor.CreateCommandDescriptor(sql);
 
-        var flightInfo = await _flightClient.GetInfo(descriptor);
-        var endpoint = flightInfo.Endpoints.FirstOrDefault();
-        if (endpoint == null) throw new SpiceException(SpiceStatus.SpiceFlightError, "Failed to get endpoint from flightInfo");
+        return await _retryPolicy.ExecuteAsync(async () =>
+        {
+            var descriptor = FlightDescriptor.CreateCommandDescriptor(sql);
+            var flightInfo = await _flightClient.GetInfo(descriptor);
 
-        var stream = _flightClient.GetStream(endpoint.Ticket);
-        return stream.ResponseStream;
+            var endpoint = flightInfo.Endpoints.FirstOrDefault();
+            if (endpoint == null) throw new Exception("Failed to get endpoint");
+
+            var stream = _flightClient.GetStream(endpoint.Ticket);
+            return stream.ResponseStream;
+        });
     }
 }
