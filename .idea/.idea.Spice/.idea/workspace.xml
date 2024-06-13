@@ -9,9 +9,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d9535132-3180-4766-9f46-224c6b0ba50f" name="Changes" comment="Refactor">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Spice/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Spice/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spice/src/Extension/AsyncEnumerableExtension.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Spice/src/Flight/SpiceFlightClient.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Spice/src/Flight/SpiceFlightClient.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spice/src/SpiceClient.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Spice/src/SpiceClient.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SpiceTest/FlightQueryTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SpiceTest/FlightQueryTest.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -30,30 +28,54 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/1d6a7cf8be084344807c71f58fb39ae711320/dd/c561dd64/0200000Epdb5.il" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/35569dbe681941aa9edd0ff6d1343bad1e800/42/fbe4720b/0200003F.il" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2a3105e7355248488912e34f9ff5cbebca718/e6/963287ef/Task`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/35569dbe681941aa9edd0ff6d1343bad1e800/03/6515041b/FlightRecordBatchStreamReader.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/35569dbe681941aa9edd0ff6d1343bad1e800/32/3d4e81ac/FlightClient.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/35569dbe681941aa9edd0ff6d1343bad1e800/b6/58b725b7/FlightDescriptor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/35569dbe681941aa9edd0ff6d1343bad1e800/db/3e458b0f/FlightDescriptorType.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/35569dbe681941aa9edd0ff6d1343bad1e800/e7/4e46b39b/FlightDescriptor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5a044da92c3f4f86a2fe2c61e305cdb31e5e00/2e/fdebf74c/HeaderUtilities.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5dbef202b9bd487c8564173c19cde8c81e800/06/736b52e2/FlightClientRecordBatchStreamReader.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5dbef202b9bd487c8564173c19cde8c81e800/20/d1aa3159/FlightDescriptor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5dbef202b9bd487c8564173c19cde8c81e800/39/626e5b9b/FlightRecordBatchStreamingCall.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5dbef202b9bd487c8564173c19cde8c81e800/61/74ccf29a/FlightMessageSerializer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5dbef202b9bd487c8564173c19cde8c81e800/79/04bac01d/FlightService.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5dbef202b9bd487c8564173c19cde8c81e800/97/d781fc65/FlightRecordBatchStreamReader.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5dbef202b9bd487c8564173c19cde8c81e800/b8/e3ebd6e4/FlightInfo.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5dbef202b9bd487c8564173c19cde8c81e800/db/66b59c58/FlightClient.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/73c86a4cc77c45e18b9b6f85fe64fff2c40c00/26/8409924a/TaskAwaiter`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/73c86a4cc77c45e18b9b6f85fe64fff2c40c00/3e/fc8133ec/ThrowHelper.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/73c86a4cc77c45e18b9b6f85fe64fff2c40c00/85/58117380/ExecutionContext.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/73c86a4cc77c45e18b9b6f85fe64fff2c40c00/b5/cdd510cb/TaskAwaiter.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/73c86a4cc77c45e18b9b6f85fe64fff2c40c00/ea/2ba34b99/ExceptionDispatchInfo.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/aa9483587b144b4893b9f33e059bb319744a0/ea/7dca7505/ReadOnlyMemory`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/aa9483587b144b4893b9f33e059bb319744a0/ea/ab54fb9e/ArgumentOutOfRangeException.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c15184cdf8254e74a8a6ee96bd1b8738d82000/9e/96604549/Environment.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c15184cdf8254e74a8a6ee96bd1b8738d82000/bc/baa6fe7a/ExceptionDispatchInfo.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c15184cdf8254e74a8a6ee96bd1b8738d82000/cc/420f1358/IAsyncEnumerator`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/e8b80b817ac34f5d8f59922b85a267511d8a00/63/323afdb2/HttpRequestHeaders.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/352e1f38b7132e75bb0c46b54a890f8d67f90cfaea3235e24c5e5f0779d75eb/AsyncUnaryCall.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/44f94355412aa2c5a9b656f19575ffc399704ff8eed4ec1b8a6b82f116f4cf/Metadata.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/6b3fe066ca559473beefff8267ebaf997ae35c345528563f542eca5821cce/AsyncServerStreamingCall.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7ddc28a3bd634d5ea661605fcfddbb46347fd33b43a661240ed8545010a2b3/RecordBatch.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/85d5cf7bc00d9afe6109255f942125d252e7d3bf3d33f44c445162ab59e52b/CallInvoker.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/91876be53b0297bbe3e3ed99bdb57588eca137bfe1fe775e37419dffdccd/GrpcChannel.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/96dcc9e57f1c97da5d6e55d45139b42bebd289a36680625852c9cc0286ff37/RpcException.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/cb97ba8dac4c71140a64ecdadfbff64b22c3340a64e8950884c6ed6b5788061/IArrowArray.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d37afa0a984eb534c5fcfa8bef7a1261e4d9df3c0b94eb668f471de2444ee/TestAttribute.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/f4ce37448c7c73723e927d899fca5753725404e799ae8ee10c1136ecf57d989/IAsyncStreamReader.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../opensource/arrow/csharp/src/Apache.Arrow.Flight/Client/FlightClient.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../opensource/arrow/csharp/src/Apache.Arrow.Flight/FlightInfo.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../opensource/arrow/csharp/src/Apache.Arrow.Flight/Internal/FlightMessageSerializer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../opensource/arrow/csharp/src/Apache.Arrow.Flight/Internal/RecordBatchReaderImplementation.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../opensource/arrow/csharp/src/Apache.Arrow.Flight/obj/Debug/netstandard2.0/Flight.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../opensource/arrow/csharp/src/Apache.Arrow/Ipc/MessageSerializer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Spice/src/Flight/SpiceFlightClient.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock:///Users/kirillkhramkov/repos/spice/spice-csharp/Spice/src/Flight/SpiceFlightClient.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Spice/src/SpiceClient.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Spice/src/SpiceClientBuilder.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Users/kirillkhramkov/repos/spice/spice-csharp/SpiceTest/FlightQueryTest.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/kirillkhramkov/repos/spice/spice-csharp/SpiceTest/FlightQueryTest.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="KubernetesApiPersistence">{}</component>
   <component name="KubernetesApiProvider">{
@@ -98,7 +120,7 @@
     ]
   }
 }</component>
-  <component name="RunManager" selected=".NET Project.ConsoleApp1">
+  <component name="RunManager">
     <configuration name="ConsoleApp1" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
       <option name="PROGRAM_PARAMETERS" value="" />

@@ -40,6 +40,11 @@ internal class SpiceFlightClient
         var options = GetGrpcChannelOptions(appId, apiKey);
 
         _flightClient = new FlightClient(GrpcChannel.ForAddress(address, options));
+
+        if (appId == null || apiKey == null)
+        {
+            return;
+        }
         
         var stream = _flightClient.Handshake();
 
