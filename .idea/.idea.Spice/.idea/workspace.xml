@@ -7,10 +7,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d9535132-3180-4766-9f46-224c6b0ba50f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Spice/src/Auth/Auth.cs" afterDir="false" />
+    <list default="true" id="d9535132-3180-4766-9f46-224c6b0ba50f" name="Changes" comment="Refactor">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Spice/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Spice/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spice/src/Extension/AsyncEnumerableExtension.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Spice/src/Flight/SpiceFlightClient.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Spice/src/Flight/SpiceFlightClient.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spice/src/SpiceClient.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Spice/src/SpiceClient.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpiceTest/FlightQueryTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SpiceTest/FlightQueryTest.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +35,9 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/35569dbe681941aa9edd0ff6d1343bad1e800/b6/58b725b7/FlightDescriptor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/35569dbe681941aa9edd0ff6d1343bad1e800/db/3e458b0f/FlightDescriptorType.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/35569dbe681941aa9edd0ff6d1343bad1e800/e7/4e46b39b/FlightDescriptor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5dbef202b9bd487c8564173c19cde8c81e800/06/736b52e2/FlightClientRecordBatchStreamReader.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5dbef202b9bd487c8564173c19cde8c81e800/39/626e5b9b/FlightRecordBatchStreamingCall.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5dbef202b9bd487c8564173c19cde8c81e800/97/d781fc65/FlightRecordBatchStreamReader.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c15184cdf8254e74a8a6ee96bd1b8738d82000/9e/96604549/Environment.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c15184cdf8254e74a8a6ee96bd1b8738d82000/bc/baa6fe7a/ExceptionDispatchInfo.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c15184cdf8254e74a8a6ee96bd1b8738d82000/cc/420f1358/IAsyncEnumerator`1.cs" root0="SKIP_HIGHLIGHTING" />
@@ -44,15 +49,11 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/96dcc9e57f1c97da5d6e55d45139b42bebd289a36680625852c9cc0286ff37/RpcException.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/cb97ba8dac4c71140a64ecdadfbff64b22c3340a64e8950884c6ed6b5788061/IArrowArray.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d37afa0a984eb534c5fcfa8bef7a1261e4d9df3c0b94eb668f471de2444ee/TestAttribute.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/f4ce37448c7c73723e927d899fca5753725404e799ae8ee10c1136ecf57d989/IAsyncStreamReader.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Spice/src/Flight/SpiceFlightClient.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock:///Users/kirillkhramkov/repos/spice/spice-csharp/Spice/src/Flight/SpiceFlightClient.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/kirillkhramkov/repos/spice/spice-csharp/Spice/src/Flight/SpiceFlightClient.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/kirillkhramkov/repos/spice/spice-csharp/Spice/src/Flight/SpiceFlightClient.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/kirillkhramkov/repos/spice/spice-csharp/Spice/src/SpiceClient.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Spice/src/SpiceClient.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Spice/src/SpiceClientBuilder.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Users/kirillkhramkov/repos/spice/spice-csharp/SpiceTest/FlightQueryTest.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/kirillkhramkov/repos/spice/spice-csharp/SpiceTest/FlightQueryTest.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="KubernetesApiPersistence">{}</component>
   <component name="KubernetesApiProvider">{
@@ -127,7 +128,7 @@
       <updated>1718078614624</updated>
       <workItem from="1718078616160" duration="202000" />
       <workItem from="1718078825988" duration="9608000" />
-      <workItem from="1718242921767" duration="480000" />
+      <workItem from="1718242921767" duration="3840000" />
     </task>
     <task id="LOCAL-00001" summary="Init project files">
       <option name="closed" value="true" />
@@ -201,7 +202,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718240721574</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Refactor">
+      <option name="closed" value="true" />
+      <created>1718243705105</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1718243705105</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -228,7 +237,8 @@
     <MESSAGE value="Target .net standard 2.0" />
     <MESSAGE value="Target .net standard 2.1" />
     <MESSAGE value="Set targets to netstandard2.0;net6.0&#10;Fix Query method on SpiceFlightClient.cs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Set targets to netstandard2.0;net6.0&#10;Fix Query method on SpiceFlightClient.cs" />
+    <MESSAGE value="Refactor" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

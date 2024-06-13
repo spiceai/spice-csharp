@@ -18,17 +18,10 @@ public class SpiceClient
         FlightClient = new SpiceFlightClient(FlightAddress, AppId, ApiKey);
     }
 
-    public IEnumerable<RecordBatch> Query(string sql)
+    public IAsyncEnumerator<RecordBatch> Query(string sql)
     {
         if (FlightClient == null) throw new Exception("FlightClient not initialized");
 
         return FlightClient.Query(sql);
-    }
-    
-    public IAsyncEnumerator<RecordBatch> QueryAsync(string sql)
-    {
-        if (FlightClient == null) throw new Exception("FlightClient not initialized");
-
-        return FlightClient.QueryAsync(sql);
     }
 }

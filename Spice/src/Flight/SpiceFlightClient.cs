@@ -4,7 +4,6 @@ using Apache.Arrow.Flight;
 using Apache.Arrow.Flight.Client;
 using Grpc.Core;
 using Grpc.Net.Client;
-using Spice.Extension;
 using Spice.Auth;
 
 namespace Spice.Flight;
@@ -52,21 +51,7 @@ internal class SpiceFlightClient
         options.HttpClient.DefaultRequestHeaders.Authorization = AuthenticationHeaderValue.Parse(token.Value);
     }
 
-    internal IEnumerable<RecordBatch> Query(string sql)
-    {
-        var descriptor = FlightDescriptor.CreateCommandDescriptor(sql);
-        var request = _flightClient.GetInfo(descriptor);
-        request.ResponseAsync.Wait();
-
-        var flightInfo = request.ResponseAsync.Result;
-        var endpoint = flightInfo.Endpoints.FirstOrDefault();
-        if (endpoint == null) throw new Exception("Failed to get endpoint");
-
-        var stream = _flightClient.GetStream(endpoint.Ticket);
-        return stream.ResponseStream.ToBlockingEnumerable();
-    }
-
-    internal async IAsyncEnumerator<RecordBatch> QueryAsync(string sql)
+    internal async IAsyncEnumerator<RecordBatch> Query(string sql)
     {
         var descriptor = FlightDescriptor.CreateCommandDescriptor(sql);
 
