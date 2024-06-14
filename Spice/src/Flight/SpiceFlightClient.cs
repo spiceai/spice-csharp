@@ -57,6 +57,10 @@ internal class SpiceFlightClient
 
     internal async Task<FlightClientRecordBatchStreamReader> Query(string sql)
     {
+        if (string.IsNullOrEmpty(sql))
+        {
+            throw new ArgumentException("No SQL provided");
+        }
         var descriptor = FlightDescriptor.CreateCommandDescriptor(sql);
 
         var flightInfo = await _flightClient.GetInfo(descriptor);
