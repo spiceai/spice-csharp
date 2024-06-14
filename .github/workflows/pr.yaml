@@ -21,4 +21,6 @@ jobs:
       - name: Build
         run: dotnet build --no-restore
       - name: Test
+        env:
+          API_KEY: ${{ secrets.SPICE_CLOUD_API_KEY }}
         run: dotnet test --no-build --verbosity normal
