@@ -5,12 +5,16 @@ namespace SpiceTest;
 public class FlightQueryTest
 {
     private SpiceClient _spiceClient;
-    private string ApiKey { get; set; }
+    private string? ApiKey { get; set; }
 
     [OneTimeSetUp]
     public void OneTimeSetup()
     {
-        ApiKey = Environment.GetEnvironmentVariable("API_KEY") ?? "323337|b42eceab2e7c4a60a04ad57bebea830d";
+        ApiKey = Environment.GetEnvironmentVariable("API_KEY");
+        if (ApiKey == null)
+        {
+            throw new Exception("No API_KEY provided");
+        }
     }
 
     [SetUp]
