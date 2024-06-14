@@ -11,15 +11,15 @@ public class FlightQueryTest
     public void OneTimeSetup()
     {
         ApiKey = Environment.GetEnvironmentVariable("API_KEY");
-        if (ApiKey == null)
-        {
-            throw new Exception("No API_KEY provided");
-        }
     }
 
     [SetUp]
     public void Setup()
     {
+        if (ApiKey == null)
+        {
+            throw new Exception("No API_KEY provided");
+        }
         _spiceClient = new SpiceClientBuilder()
             .WithSpiceCloud(ApiKey)
             .Build();
