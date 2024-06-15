@@ -4,6 +4,7 @@ using Apache.Arrow.Flight.Client;
 using Grpc.Core;
 using Grpc.Net.Client;
 using Spice.Auth;
+using Spice.Errors;
 
 namespace Spice.Flight;
 
@@ -50,7 +51,7 @@ internal class SpiceFlightClient
         stream.ResponseHeadersAsync.Wait();
 
         var token = GetAuthToken(stream.ResponseHeadersAsync.Result, stream.GetTrailers());
-        if (token == null || options.HttpClient == null) throw new Exception("Failed to authenticate token");
+        if (token == null || options.HttpClient == null) throw new SpiceException(SpiceStatus.FailedToAuthenticate, "Failed to authenticate");
 
         options.HttpClient.DefaultRequestHeaders.Authorization = AuthenticationHeaderValue.Parse(token.Value);
     }
@@ -65,7 +66,7 @@ internal class SpiceFlightClient
 
         var flightInfo = await _flightClient.GetInfo(descriptor);
         var endpoint = flightInfo.Endpoints.FirstOrDefault();
-        if (endpoint == null) throw new Exception("Failed to get endpoint");
+        if (endpoint == null) throw new SpiceException(SpiceStatus.SpiceFlightError, "Failed to get endpoint from flightInfo");
 
         var stream = _flightClient.GetStream(endpoint.Ticket);
         return stream.ResponseStream;
