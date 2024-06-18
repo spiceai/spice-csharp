@@ -1,14 +1,8 @@
 # Dotnet Spice SDK
 
-Dotnet SDK for Spice.ai
-
-## Installation
-
-Add Spice SDK
-
-[//]: # (update when published to nuget)
-```bash 
-```
+Dotnet SDK for Spice.ai.
+- Supports .NET Standard 2.0 and .NET 6.0.
+- Asynchronous I/O.
 
 ## Usage
 
@@ -30,7 +24,8 @@ var client = new SpiceClientBuilder().Build();
 using Spice;
 
 var client = new SpiceClientBuilder()
-            .WithSpiceCloud("API_KEY")
+            .WithApiKey("API_KEY")
+            .WithSpiceCloud()
             .Build();
 ```
 
@@ -42,7 +37,8 @@ SQL Query
 using Spice;
 
 var client = new SpiceClientBuilder()
-            .WithSpiceCloud("API_KEY")
+            .WithApiKey("API_KEY")
+            .WithSpiceCloud()
             .Build();
 
 var data = await client.Query("SELECT * FROM eth.recent_blocks LIMIT 10;");

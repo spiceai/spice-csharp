@@ -40,12 +40,12 @@ public class SpiceClientBuilder
     }
 
     /// <summary>
-    /// Sets the client's apiKey token and default paths flight path to Spice Cloud.
+    /// Sets the client's Api Key.
     /// </summary>
     /// <param name="apiKey">The Spice Cloud api key</param>
     /// <returns>The current instance of <see cref="SpiceClientBuilder"/> for method chaining.</returns>
     /// <exception cref="System.ArgumentException">Thrown when the apiKey is in wrong format.</exception>
-    public SpiceClientBuilder WithSpiceCloud(string apiKey)
+    public SpiceClientBuilder WithApiKey(string apiKey)
     {
         var parts = apiKey.Split('|');
         if (parts.Length != 2)
@@ -55,7 +55,16 @@ public class SpiceClientBuilder
 
         _spiceClient.AppId = parts[0];
         _spiceClient.ApiKey = apiKey;
+        
+        return this;
+    }
 
+    /// <summary>
+    /// Sets the client's flight address to default Spice Cloud address. 
+    /// </summary>
+    /// <returns>The current instance of <see cref="SpiceClientBuilder"/> for method chaining.</returns>
+    public SpiceClientBuilder WithSpiceCloud()
+    {
         _spiceClient.FlightAddress = SpiceDefaultConfigCloud.FlightAddress;
         return this;
     }

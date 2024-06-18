@@ -43,7 +43,8 @@ public class FlightQueryTest
             throw new Exception("No API_KEY provided");
         }
         _spiceClient = new SpiceClientBuilder()
-            .WithSpiceCloud(ApiKey)
+            .WithApiKey(ApiKey)
+            .WithSpiceCloud()
             .Build();
     }
 
