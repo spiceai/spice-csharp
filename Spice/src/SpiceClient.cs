@@ -28,7 +28,6 @@ namespace Spice;
 
 public class SpiceClient
 {
-    
     /// <summary>
     /// Gets or sets the application ID. This property is internal set and can be null.
     /// </summary>
@@ -53,7 +52,7 @@ public class SpiceClient
 
     internal void Init()
     {
-        FlightClient = new SpiceFlightClient(FlightAddress, AppId, ApiKey);
+        FlightClient = new SpiceFlightClient(FlightAddress, MaxRetries, AppId, ApiKey);
     }
 
     /// <summary>
