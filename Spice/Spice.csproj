@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <LangVersion>11.0</LangVersion>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Version>0.1.0</Version>
+        <Nullable>enable</Nullable>
+        <TargetFrameworks>netstandard2.0;net6.0</TargetFrameworks>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Apache.Arrow" Version="16.1.0"/>
+        <PackageReference Include="Apache.Arrow.Flight" Version="16.1.0"/>
+        <PackageReference Include="Polly" Version="8.4.0"/>
+    </ItemGroup>
+
+
+</Project>

@@ -1,0 +1,26 @@
+name: pr
+
+on:
+  push:
+    branches: ["trunk"]
+  pull_request:
+    branches: ["trunk"]
+
+jobs:
+  build_and_test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 7.0.x
+      - name: Restore dependencies
+        run: dotnet restore
+      - name: Build
+        run: dotnet build --no-restore
+      - name: Test
+        env:
+          API_KEY: ${{ secrets.SPICE_CLOUD_API_KEY }}
+        run: dotnet test --no-build --verbosity normal
