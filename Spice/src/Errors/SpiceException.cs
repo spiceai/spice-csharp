@@ -23,7 +23,7 @@ SOFTWARE.
 namespace Spice.Errors;
 
 /// <summary>
-/// Generic Spice SDK exception. 
+/// Spice Client SDK exceptions.
 /// </summary>
 [Serializable]
 public class SpiceException : Exception
