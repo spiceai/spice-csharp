@@ -2,8 +2,11 @@
 
     <PropertyGroup>
         <LangVersion>11.0</LangVersion>
+        <PackageId>SpiceAI</PackageId>
         <ImplicitUsings>enable</ImplicitUsings>
         <Version>0.1.0</Version>
+        <Description>SpiceAI Dotnet SDK</Description>
+        <Authors>SpiceAI OSS</Authors>
         <Nullable>enable</Nullable>
         <TargetFrameworks>netstandard2.0;net6.0</TargetFrameworks>
     </PropertyGroup>
