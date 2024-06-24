@@ -4,6 +4,12 @@ Dotnet SDK for Spice.ai.
 - Supports .NET Standard 2.0 and .NET 6.0.
 - Asynchronous I/O.
 
+## Install
+
+```bash
+dotnet add package spiceai
+```
+
 ## Usage
 
 <!-- NOTE: If you're changing the code examples below, make sure you update `tests/readme_test.rs`. -->
