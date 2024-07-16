@@ -1,7 +1,7 @@
 # Dotnet Spice SDK
 
 Dotnet SDK for Spice.ai.
-- Supports .NET Standard 2.0 and .NET 6.0.
+- Supports .NET Standard 2.0+ and .NET 6.0+.
 - Asynchronous I/O.
 
 ## Install
