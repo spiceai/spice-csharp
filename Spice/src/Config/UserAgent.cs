@@ -28,12 +28,13 @@ internal static class UserAgent
     {
         // get OS type, release and machine type (x86, x64, arm, etc)
         var os = Environment.OSVersion;
-        var osType = os.Platform;
+        var osTypeStr = os.Platform.ToString();
         var osVersion = os.VersionString;
-        osVersion = osVersion.Replace($"{osType} ", ""); // remove osType from version
-        if (osType == PlatformID.Win32NT)
+        osVersion = osVersion.Replace($"{osTypeStr} ", ""); // remove osType from version
+        if (osTypeStr == "Win32NT")
         {
             osVersion = osVersion.Replace("Microsoft Windows NT ", ""); // remove "Microsoft Windows NT " from version
+            osTypeStr = "Windows";
         }
 
         var osArch = System.Runtime.InteropServices.RuntimeInformation.OSArchitecture;
@@ -60,6 +61,6 @@ internal static class UserAgent
         var appVersion = typeof(SpiceClient).Assembly.GetName().Version;
 
         // return the user agent string
-        return $"spice-dotnet {appVersion} ({osType}/{osVersion} {osArchStr})";
+        return $"spice-dotnet {appVersion} ({osTypeStr}/{osVersion} {osArchStr})";
     }
 }
