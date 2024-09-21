@@ -31,6 +31,11 @@ internal static class UserAgent
         var osType = os.Platform;
         var osVersion = os.VersionString;
         osVersion = osVersion.Replace($"{osType} ", ""); // remove osType from version
+        if (osType == PlatformID.Win32NT)
+        {
+            osVersion = osVersion.Replace("Microsoft Windows NT ", ""); // remove "Microsoft Windows NT " from version
+        }
+
         var osArch = System.Runtime.InteropServices.RuntimeInformation.OSArchitecture;
 
         var osArchStr = "unknown";
@@ -47,7 +52,7 @@ internal static class UserAgent
                 osArchStr = "arm";
                 break;
             case System.Runtime.InteropServices.Architecture.Arm64:
-                osArchStr = "arm64";
+                osArchStr = "aarch64";
                 break;
         }
 
