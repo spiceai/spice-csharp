@@ -50,6 +50,7 @@ public class SpiceClient
 
     private SpiceFlightClient? FlightClient { get; set; }
 
+
     internal void Init()
     {
         FlightClient = new SpiceFlightClient(FlightAddress, MaxRetries, AppId, ApiKey);

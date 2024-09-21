@@ -28,6 +28,7 @@ using Grpc.Net.Client;
 using Polly;
 using Polly.Retry;
 using Spice.Auth;
+using Spice.Config;
 using Spice.Errors;
 
 namespace Spice.Flight;
@@ -43,14 +44,18 @@ internal class SpiceFlightClient
 
         if (appId == null || apiKey == null) return options;
 
+
         options.Credentials = ChannelCredentials.SecureSsl;
         options.HttpClient = new HttpClient
         {
             DefaultRequestHeaders =
             {
                 Authorization = AuthHeaderBuilder.BasicAuth(appId, apiKey)
+
             }
         };
+
+        options.HttpClient.DefaultRequestHeaders.Add("X-Spice-User-Agent", UserAgent.agent());
 
         return options;
     }
