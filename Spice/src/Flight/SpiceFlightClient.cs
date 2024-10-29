@@ -25,7 +25,6 @@ using Apache.Arrow.Flight;
 using Apache.Arrow.Flight.Client;
 using Grpc.Core;
 using Grpc.Net.Client;
-using Grpc.Net.Client.Web;
 using Polly;
 using Polly.Retry;
 using Spice.Auth;
