@@ -8,13 +8,14 @@
         <Description>SpiceAI Dotnet SDK</Description>
         <Authors>SpiceAI OSS</Authors>
         <Nullable>enable</Nullable>
-        <TargetFrameworks>netstandard2.1;net6.0</TargetFrameworks>
+        <TargetFrameworks>netstandard2.1;net8.0</TargetFrameworks>
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Apache.Arrow" Version="16.1.0"/>
-        <PackageReference Include="Apache.Arrow.Flight" Version="16.1.0"/>
-        <PackageReference Include="Polly" Version="8.4.0"/>
+        <PackageReference Include="Apache.Arrow" Version="16.1.0" />
+        <PackageReference Include="Apache.Arrow.Flight" Version="16.1.0" />
+        <PackageReference Include="Grpc.Net.Client.Web" Version="2.66.0" />
+        <PackageReference Include="Polly" Version="8.4.0" />
 
         <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleTo">
             <_Parameter1>SpiceTest</_Parameter1>
