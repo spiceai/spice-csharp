@@ -16,7 +16,6 @@
         <PackageReference Include="Apache.Arrow.Flight" Version="16.1.0" />
         <PackageReference Include="Grpc.Core.Api" Version="2.66.0" />
         <PackageReference Include="Grpc.Net.Client" Version="2.66.0" />
-        <!--<PackageReference Include="Grpc.Net.Client.Web" Version="2.66.0" />-->
         <PackageReference Include="Grpc.Net.Common" Version="2.66.0" />
         <PackageReference Include="Polly" Version="8.4.0" />
 
