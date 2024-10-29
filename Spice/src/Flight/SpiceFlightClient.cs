@@ -51,10 +51,9 @@ internal class SpiceFlightClient
             DefaultRequestHeaders =
             {
                 Authorization = AuthHeaderBuilder.BasicAuth(appId, apiKey)
-
             }
         };
-
+        
         options.HttpClient.DefaultRequestHeaders.Add("X-Spice-User-Agent", UserAgent.agent());
 
         return options;
