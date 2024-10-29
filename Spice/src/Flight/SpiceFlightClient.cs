@@ -54,8 +54,7 @@ internal class SpiceFlightClient
                 Authorization = AuthHeaderBuilder.BasicAuth(appId, apiKey)
             }
         };
-        options.HttpHandler = new GrpcWebHandler(new HttpClientHandler());
-
+        
         options.HttpClient.DefaultRequestHeaders.Add("X-Spice-User-Agent", UserAgent.agent());
 
         return options;
