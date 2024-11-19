@@ -81,6 +81,17 @@ public class SpiceClientBuilder
     }
 
     /// <summary>
+    /// Sets the client's user agent.
+    /// </summary>
+    /// <param name="userAgent">User agent string</param>
+    /// <returns>The current instance of <see cref="SpiceClientBuilder"/> for method chaining.</returns>
+    public SpiceClientBuilder WithUserAgent(string userAgent)
+    {
+        _spiceClient.UserAgent = userAgent;
+        return this;
+    }
+
+    /// <summary>
     /// Initiates <see cref="SpiceClient" /> with provided parameters.
     /// </summary>
     /// <returns>The current instance of <see cref="SpiceClient"/> for method chaining.</returns>

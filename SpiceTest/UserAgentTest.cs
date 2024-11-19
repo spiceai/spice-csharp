@@ -35,7 +35,7 @@ public class UserAgentTest
             var agent = UserAgent.agent();
 
             // test with a regex
-            Assert.IsTrue(Regex.IsMatch(agent, @"spice-dotnet \d+\.\d+\.\d+\.\d+ \((Unix|Windows|Darwin)/[\d\w\.\-_]+ (x86_64|aarch64|i386)\)"), agent);
+            Assert.IsTrue(Regex.IsMatch(agent, @"spice-dotnet/\d+\.\d+\.\d+\.\d+ \((Unix|Windows|Darwin)/[\d\w\.\-_]+ (x86_64|aarch64|i386)\)"), agent);
         });
     }
 }

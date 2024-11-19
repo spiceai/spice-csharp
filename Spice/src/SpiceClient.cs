@@ -39,6 +39,11 @@ public class SpiceClient
     public string? ApiKey { get; internal set; }
 
     /// <summary>
+    /// Gets or sets the User-Agent string. This property is internal set and can be null.
+    /// </summary>
+    public string? UserAgent { get; internal set; }
+
+    /// <summary>
     /// Gets or sets the flight address. This property is internal set and defaults to local flight endpoint.
     /// </summary>
     public string FlightAddress { get; internal set; } = SpiceDefaultConfigLocal.FlightAddress;
@@ -53,7 +58,7 @@ public class SpiceClient
 
     internal void Init()
     {
-        FlightClient = new SpiceFlightClient(FlightAddress, MaxRetries, AppId, ApiKey);
+        FlightClient = new SpiceFlightClient(FlightAddress, MaxRetries, AppId, ApiKey, UserAgent);
     }
 
     /// <summary>

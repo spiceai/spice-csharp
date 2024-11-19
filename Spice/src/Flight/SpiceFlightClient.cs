@@ -38,7 +38,7 @@ internal class SpiceFlightClient
     private readonly FlightClient _flightClient;
     private readonly AsyncRetryPolicy _retryPolicy;
 
-    private static GrpcChannelOptions GetGrpcChannelOptions(string? appId, string? apiKey)
+    private static GrpcChannelOptions GetGrpcChannelOptions(string? appId, string? apiKey, string? userAgent)
     {
         var options = new GrpcChannelOptions();
 
@@ -54,7 +54,8 @@ internal class SpiceFlightClient
             }
         };
         
-        options.HttpClient.DefaultRequestHeaders.Add("X-Spice-User-Agent", UserAgent.agent());
+        var uaString = userAgent ?? UserAgent.agent();
+        options.HttpClient.DefaultRequestHeaders.Add("User-Agent", uaString);
 
         return options;
     }
