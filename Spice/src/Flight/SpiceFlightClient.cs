@@ -65,7 +65,7 @@ internal class SpiceFlightClient
         return responseHeaders.Get("authorization") ?? trailers.Get("authorization");
     }
 
-    internal SpiceFlightClient(string address, int maxRetries, string? appId, string? apiKey)
+    internal SpiceFlightClient(string address, int maxRetries, string? appId, string? apiKey, string? userAgent)
     {
         _retryPolicy = Policy.Handle<RpcException>(ex =>
                 ex.Status.StatusCode is StatusCode.Unavailable or StatusCode.DeadlineExceeded or StatusCode.Aborted
@@ -78,7 +78,7 @@ internal class SpiceFlightClient
                         $"Request failed. Waiting {timespan} before next retry. Retry attempt {retryAttempt}");
                 });
 
-        var options = GetGrpcChannelOptions(appId, apiKey);
+        var options = GetGrpcChannelOptions(appId, apiKey, userAgent);
 
         _flightClient = new FlightClient(GrpcChannel.ForAddress(address, options));
 

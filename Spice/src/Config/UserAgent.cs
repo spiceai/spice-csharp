@@ -24,7 +24,7 @@ namespace Spice.Config;
 
 internal static class UserAgent
 {
-    public static string agent(client:string = null, clientVersion:string = null, clientSystem:string = null, clientExtension:string = null)
+    public static string agent(string? client = null, string? clientVersion = null, string? clientSystem = null, string? clientExtension = null)
     {
         // get OS type, release and machine type (x86, x64, arm, etc)
         var os = Environment.OSVersion;
@@ -61,7 +61,7 @@ internal static class UserAgent
         var appVersion = typeof(SpiceClient).Assembly.GetName().Version;
 
         var clientName = client ?? "spice-dotnet";
-        var clientVer = clientVersion ?? appVersion.ToString();
+        var clientVer = clientVersion ?? appVersion?.ToString();
         var clientSys = clientSystem ?? $"{osTypeStr}/{osVersion} {osArchStr}";
         var clientExt = $" {clientExtension}" ?? "";
         // return the user agent string
