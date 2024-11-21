@@ -22,7 +22,7 @@ SOFTWARE.
 
 namespace Spice.Config;
 
-internal static class UserAgent
+public static class SpiceUserAgent
 {
     public static string agent(string? client = null, string? clientVersion = null, string? clientSystem = null, string? clientExtension = null)
     {

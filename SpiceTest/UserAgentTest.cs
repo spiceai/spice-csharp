@@ -32,7 +32,7 @@ public class UserAgentTest
     {
         await Task.Run(() =>
         {
-            var agent = UserAgent.agent();
+            var agent = SpiceUserAgent.agent();
 
             // test with a regex
             Assert.IsTrue(Regex.IsMatch(agent, @"spice-dotnet/\d+\.\d+\.\d+\.\d+ \((Unix|Windows|Darwin)/[\d\w\.\-_]+ (x86_64|aarch64|i386)\)"), agent);

@@ -54,7 +54,7 @@ internal class SpiceFlightClient
             }
         };
         
-        var uaString = userAgent ?? UserAgent.agent();
+        var uaString = userAgent ?? SpiceUserAgent.agent();
         options.HttpClient.DefaultRequestHeaders.Add("User-Agent", uaString);
 
         return options;
