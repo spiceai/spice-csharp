@@ -53,8 +53,9 @@ internal class SpiceFlightClient
                 Authorization = AuthHeaderBuilder.BasicAuth(appId, apiKey)
             }
         };
-        
-        var uaString = userAgent ?? SpiceUserAgent.agent();
+
+        // Prepend the user-supplied user agent (if any) with the Spice user agent
+        var uaString = string.IsNullOrEmpty(userAgent) ? SpiceUserAgent.agent() : $"{userAgent} {SpiceUserAgent.agent()}";
         options.HttpClient.DefaultRequestHeaders.Add("User-Agent", uaString);
 
         return options;
