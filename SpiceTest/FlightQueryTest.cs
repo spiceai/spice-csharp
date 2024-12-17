@@ -49,6 +49,7 @@ public class FlightQueryTest
     }
 
     [Test]
+    [Ignore("Ignoring cloud tests for now")]
     public async Task TestQuery()
     {
         var result =
